@@ -291,8 +291,4 @@ public abstract class ComplexMath {
 		return new Complex(tanhReZ, tanImZ).divide(new Complex(1.0, tanhReZ * tanImZ));
 	}
 
-	public static void main(String[] args) {
-		System.out.println(new Complex(3, 5).conjugate());
-	}
-
 }
