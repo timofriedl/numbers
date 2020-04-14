@@ -277,9 +277,9 @@ public abstract class ComplexMath {
 	/**
 	 * Calculates the hyperbolic tangent of a given complex number.
 	 * 
-	 * .............tanh Re(z) + i tan Im(z).........</br>
-	 * tanh(z) := ----------------------------.......</br>
-	 * ............1 + i tanh Re(z) tan Im(z)........</br>
+	 * .............tanh Re(z) + i tan Im(z)..........</br>
+	 * tanh(z) := ----------------------------........</br>
+	 * ............1 + i tanh Re(z) tan Im(z).........</br>
 	 * 
 	 * @param z the given complex number
 	 * @return the hyperbolic tangent of <code>z</code>
