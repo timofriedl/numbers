@@ -65,7 +65,7 @@ public abstract class ComplexMath {
 	}
 
 	/**
-	 * The complex exponential function.
+	 * The complex exponential function.</br>
 	 * 
 	 * exp(z) = exp(a + bi) := exp(a) * (cos b + i sin b)
 	 * 
@@ -85,7 +85,7 @@ public abstract class ComplexMath {
 	}
 
 	/**
-	 * Returns the result of exp(i*x) where
+	 * Returns the result of exp(i*x) where</br>
 	 * 
 	 * exp(i*x) = cos x + i sin x
 	 * 
@@ -106,9 +106,9 @@ public abstract class ComplexMath {
 	}
 
 	/**
-	 * Calculates the complex natural logarithm of a given complex number.
+	 * Calculates the complex natural logarithm of a given complex number.</br>
 	 * 
-	 * Log(z) := log|z| + Arg(z)i
+	 * Log(z) := log|z| + i Arg(z)
 	 * 
 	 * @return
 	 */
@@ -134,7 +134,7 @@ public abstract class ComplexMath {
 	}
 
 	/**
-	 * Calculates the absolute value of a given complex number.
+	 * Calculates the absolute value of a given complex number.</br>
 	 * 
 	 * |z| = |a + bi| := sqrt(a^2 + b^2)
 	 * 
@@ -146,19 +146,24 @@ public abstract class ComplexMath {
 	}
 
 	/**
-	 * Calculates the angle of a given complex number.
+	 * Calculates the angle of a given complex number.</br>
 	 * 
-	 * Arg(z) = Arg(a + bi) := atan2(b, a)
+	 * Arg(z) = Arg(a + bi) := atan2(b, a)</br>
+	 * 
+	 * Convention: Arg(0) = 0
 	 * 
 	 * @param z the given complex number
 	 * @return the argument of <code>z</code>
 	 */
 	public static double arg(Complex z) {
+		if (z.equals(Complex.ZERO))
+			return 0.0;
+
 		return Math.atan2(z.getImaginary(), z.getReal());
 	}
 
 	/**
-	 * Calculates the sine of a given complex number.
+	 * Calculates the sine of a given complex number.</br>
 	 * 
 	 * sin(z) = sin(a + bi) = sin(a)cosh(b) + i cos(a)sinh(b)
 	 * 
@@ -171,7 +176,7 @@ public abstract class ComplexMath {
 	}
 
 	/**
-	 * Calculates the cosine of a given complex number.
+	 * Calculates the cosine of a given complex number.</br>
 	 * 
 	 * cos(z) = cos(a + bi) = cos(a)cosh(b) - i sin(a)*sinh(b)
 	 * 
@@ -184,7 +189,7 @@ public abstract class ComplexMath {
 	}
 
 	/**
-	 * Calculates the tangent of a given complex number.
+	 * Calculates the tangent of a given complex number.</br>
 	 * 
 	 * ..........sin(2 Re(z)) + i sinh(2 Im(z))....</br>
 	 * tan(z) = --------------------------------...</br>
@@ -203,7 +208,7 @@ public abstract class ComplexMath {
 	}
 
 	/**
-	 * Calculates the arc sine of a given complex number.
+	 * Calculates the arc sine of a given complex number.</br>
 	 * 
 	 * asin(z) := -i Log(iz + sqrt(1 - z^2))
 	 * 
@@ -215,7 +220,7 @@ public abstract class ComplexMath {
 	}
 
 	/**
-	 * Calculates the arc cosine of a given complex number.
+	 * Calculates the arc cosine of a given complex number.</br>
 	 * 
 	 * asin(z) := -i Log(z + i sqrt(1 - z^2))
 	 * 
@@ -227,7 +232,7 @@ public abstract class ComplexMath {
 	}
 
 	/**
-	 * Calculates the arc tangent of a given complex number.
+	 * Calculates the arc tangent of a given complex number.</br>
 	 * 
 	 * atan(z) := 1/2 i Log(1 - iz) - 1/2 i Log(1 + iz)
 	 * 
@@ -235,8 +240,8 @@ public abstract class ComplexMath {
 	 * @return the arc cosine of <code>z</code>
 	 */
 	public static Complex atan(Complex z) {
-		return halfILog(
-				Complex.ONE.subtract(Complex.I.multiply(z))).subtract(halfILog(Complex.ONE.add(Complex.I.multiply(z))));
+		return halfILog(Complex.ONE.subtract(Complex.I.multiply(z)))
+				.subtract(halfILog(Complex.ONE.add(Complex.I.multiply(z))));
 	}
 
 	/**
@@ -251,7 +256,7 @@ public abstract class ComplexMath {
 	}
 
 	/**
-	 * Calculates the hyperbolic sine of a given complex number.
+	 * Calculates the hyperbolic sine of a given complex number.</br>
 	 * 
 	 * sinh(z) := e^z / 2 - e^-z / 2
 	 * 
@@ -263,7 +268,7 @@ public abstract class ComplexMath {
 	}
 
 	/**
-	 * Calculates the hyperbolic cosine of a given complex number.
+	 * Calculates the hyperbolic cosine of a given complex number.</br>
 	 * 
 	 * cosh(z) := e^z / 2 + e^-z / 2
 	 * 
@@ -275,7 +280,7 @@ public abstract class ComplexMath {
 	}
 
 	/**
-	 * Calculates the hyperbolic tangent of a given complex number.
+	 * Calculates the hyperbolic tangent of a given complex number.</br>
 	 * 
 	 * .............tanh Re(z) + i tan Im(z)..........</br>
 	 * tanh(z) := ----------------------------........</br>
