@@ -60,7 +60,7 @@ public abstract class ComplexMath {
 	 * @param z the given complex number
 	 * @return the <code>n</code>-th root of <code>z</code>
 	 */
-	private static Complex root(int n, Complex z) {
+	public static Complex root(int n, Complex z) {
 		return pow(z, new Complex(1.0 / n));
 	}
 
@@ -92,7 +92,7 @@ public abstract class ComplexMath {
 	 * @param x the input value x
 	 * @return exp(i*<code>x</code>
 	 */
-	private static Complex euler(double x) {
+	public static Complex euler(double x) {
 		if (x % (Math.PI * 2.0) == 0.0)
 			return Complex.ONE;
 		if (x % (Math.PI * 2.0) == 0.5 * Math.PI)
